@@ -842,7 +842,7 @@ func readHeader(r util.Reader) (*header, error) {
 			continue
 		}
 
-		if h.streamsInfo.subStreamsInfo != nil {
+		if h.streamsInfo.subStreamsInfo != nil && len(h.streamsInfo.subStreamsInfo.digest) > int(j) {
 			h.filesInfo.file[i].CRC32 = h.streamsInfo.subStreamsInfo.digest[j]
 		}
 
